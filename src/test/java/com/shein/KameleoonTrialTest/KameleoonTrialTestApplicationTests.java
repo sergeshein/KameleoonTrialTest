@@ -4,8 +4,10 @@ import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class KameleoonTrialTestApplicationTests {
+class TrialTaskApplicationTests {
 
-
+	@Test
+	void contextLoads() {
+	}
 
 }
