@@ -13,12 +13,14 @@ import java.time.LocalDateTime;
 @ToString
 @EqualsAndHashCode
 public class User {
+    private final static String SEQ_NAME = "user_seq";
 
     /**
      * Идентификатор
      */
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy =GenerationType.SEQUENCE, generator = SEQ_NAME)
+    @SequenceGenerator(sequenceName = SEQ_NAME, name = SEQ_NAME, allocationSize = 1)
     private Long id;
     /**
      * Логин (имя пользователя)

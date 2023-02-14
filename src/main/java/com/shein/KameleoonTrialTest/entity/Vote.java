@@ -10,8 +10,10 @@ import lombok.*;
 @Data
 @Table(name = "votes")
 public class Vote {
+    private final static String SEQ_NAME = "vote_seq";
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy =GenerationType.SEQUENCE, generator = SEQ_NAME)
+    @SequenceGenerator(sequenceName = SEQ_NAME, name = SEQ_NAME, allocationSize = 1)
     private Long id;
 
     @Column(name = "vote_type", nullable = false)
